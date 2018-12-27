@@ -1,17 +1,27 @@
-%define		kdeappsver	17.08.2
-%define		qtver		5.3.2
+%define		kdeappsver	18.12.0
+%define		qtver		5.9.0
 %define		kaname		libkipi
 
 Summary:	Kipi library
 Summary(pl.UTF-8):	Biblioteka kipi
 Name:		ka5-%{kaname}
-Version:	17.08.2
+Version:	18.12.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	939e484353f7074f4f370998edce4894
+# Source0-md5:	36542096568f918cf58c57c5c3c9004f
 URL:		http://www.kde.org/
+BuildRequires:	Qt5Core-devel
+BuildRequires:	Qt5Gui-devel
+BuildRequires:	Qt5Widgets-devel
+BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
+BuildRequires:	kf5-kconfig-devel >= 5.1.0
+BuildRequires:	kf5-kservice-devel >= 5.1.0
+BuildRequires:	kf5-kxmlgui-devel >= 5.1.0
+BuildRequires:	libjpeg-devel
+BuildRequires:	libpng-devel
+BuildRequires:	libtiff-devel
 BuildRequires:	rpmbuild(macros) >= 1.164
 Obsoletes:	libkipi <= 4.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -24,7 +34,7 @@ Biblioteka kipi.
 
 %package devel
 Summary:	Header files for libkipi development
-Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających libkipi
+Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	kde4-kdegraphics-devel < 4.6.99
@@ -34,7 +44,7 @@ Obsoletes:	libkipi-devel <= 4.8.0
 Header files for libkipi development.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe dla programistów używających libkipi.
+Pliki nagłówkowe dla programistów używających %{kaname}.
 
 %prep
 %setup -q -n %{kaname}-%{version}
