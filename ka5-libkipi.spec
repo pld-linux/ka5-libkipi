@@ -1,24 +1,25 @@
-%define		kdeappsver	18.12.1
+%define		kdeappsver	19.04.1
+%define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		libkipi
 
 Summary:	Kipi library
 Summary(pl.UTF-8):	Biblioteka kipi
 Name:		ka5-%{kaname}
-Version:	18.12.1
+Version:	19.04.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	524a64c8956f7c8d81a94d8a78613d31
+# Source0-md5:	85961f951fa7ad2f1d43c34c181aa89f
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Gui-devel
 BuildRequires:	Qt5Widgets-devel
-BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
-BuildRequires:	kf5-kconfig-devel >= 5.1.0
-BuildRequires:	kf5-kservice-devel >= 5.1.0
-BuildRequires:	kf5-kxmlgui-devel >= 5.1.0
+BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf5-kconfig-devel >= %{kframever}
+BuildRequires:	kf5-kservice-devel >= %{kframever}
+BuildRequires:	kf5-kxmlgui-devel >= %{kframever}
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
@@ -55,6 +56,7 @@ install -d build
 cd build
 %cmake \
 	-G Ninja \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
 %ninja_build
