@@ -1,4 +1,4 @@
-%define		kdeappsver	21.12.0
+%define		kdeappsver	21.12.1
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		libkipi
@@ -6,12 +6,12 @@
 Summary:	Kipi library
 Summary(pl.UTF-8):	Biblioteka kipi
 Name:		ka5-%{kaname}
-Version:	21.12.0
+Version:	21.12.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	e75a92d7c37761802173608944bd8a0c
+# Source0-md5:	860efd88f2a128e2faf11ecd31712694
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Gui-devel
