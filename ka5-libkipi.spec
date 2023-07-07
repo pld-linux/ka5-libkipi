@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.04.2
+%define		kdeappsver	23.04.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		libkipi
@@ -9,12 +9,12 @@
 Summary:	Kipi library
 Summary(pl.UTF-8):	Biblioteka kipi
 Name:		ka5-%{kaname}
-Version:	23.04.2
+Version:	23.04.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	d1f93970b662f780fb7afd62b2e591a5
+# Source0-md5:	1b0f062aea283b58d03858f2b8b3b726
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Gui-devel
